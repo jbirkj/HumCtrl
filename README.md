@@ -15,3 +15,5 @@ Fotek SSR 25DA - https://easyeda.com/marpik/Fotek_SSR_25DA-2cd47362592f46139ae9a
 
 README.md formatting - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
+UBIDots example - https://help.ubidots.com/en/articles/1077054-diy-raspberry-pi-temperature-system-with-ubidots
+
