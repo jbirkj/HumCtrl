@@ -2,9 +2,11 @@
 import argparse
 import RPi.GPIO as GPIO
 import bme280
+import requests
 from time import time, ctime
 from fan import Fan
 from os import system
+from ubi import UBI_url
 
 T = time()
 f = Fan()
@@ -27,6 +29,7 @@ try:
             system('clear')
             #print("Reading {3}: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH, round(T)))
             print("Reading @ {3}: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH, ctime())) 
+            r = requests.post(UBI_url, {'Temperature': t, 'Pressure': p, 'Humidity':rH} )
             
             if rH > rHlimit:
                 f.FanOn()
