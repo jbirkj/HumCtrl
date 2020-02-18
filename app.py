@@ -6,7 +6,7 @@ from time import time, ctime
 from fan import Fan
 from os import system
 
-T = time.time()
+T = time()
 f = Fan()
 
 parser = argparse.ArgumentParser(description='add measure cycle in seconds')
@@ -20,9 +20,9 @@ rHlimit = args.rH
 try:
     while(True):
         
-        if (time.time()-T) >= Tcycle:     #T in seconds
+        if (time()-T) >= Tcycle:     #T in seconds
             
-            T = time.time()
+            T = time()
             t,p,rH = bme280.readBME280All()
             system('clear')
             #print("Reading {3}: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH, round(T)))
