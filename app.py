@@ -2,7 +2,7 @@
 import argparse
 import RPi.GPIO as GPIO
 import bme280
-import time
+from time import time, ctime
 from fan import Fan
 from os import system
 
@@ -25,7 +25,8 @@ try:
             T = time.time()
             t,p,rH = bme280.readBME280All()
             system('clear')
-            print("aflæsning: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH))
+            #print("Reading {3}: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH, round(T)))
+            print("Reading @ {3}: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH, ctime())) 
             
             if rH > rHlimit:
                 f.FanOn()
