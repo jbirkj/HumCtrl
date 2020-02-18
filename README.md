@@ -11,3 +11,4 @@ print-.format - https://www.geeksforgeeks.org/python-output-formatting/
 BME280 - https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/
 code - https://bitbucket.org/MattHawkinsUK/rpispy-misc/raw/master/python/bme280.py
 
+Fotek SSR 25DA - https://easyeda.com/marpik/Fotek_SSR_25DA-2cd47362592f46139ae9a9c5a5eaba19
