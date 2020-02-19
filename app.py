@@ -20,8 +20,20 @@ Tcycle = args.t
 rHlimit = args.rH
 
 try:
+    #entry state to do measure at start
+    t,p,rH = bme280.readBME280All()
+    print("Reading @ {3}: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH, ctime())) 
+    r = requests.post(UBI_url, {'Temperature': t, 'Pressure': p, 'Humidity':rH} )
+
+    if rH > rHlimit:
+        f.FanOn()
+        print("Fan on")
+    else:
+        f.FanOff()
+        print("Fan Off")
+
+    #entering endless loop for continous runtime
     while(True):
-        
         if (time()-T) >= Tcycle:     #T in seconds
             
             T = time()
