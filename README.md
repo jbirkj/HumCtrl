@@ -1,6 +1,13 @@
 # HumCtrl
 
-References:
+## source for Raspberry Pi to measuer humidity and control a fan accordingly.
+
+### Hardware:
+- Raspberry Pi 3 B+
+- BME280 sensor board 
+- SSR relay (Fotex SSR DA25 )
+
+## References:
 
 Cmd-line args - https://levelup.gitconnected.com/the-easy-guide-to-python-command-line-arguments-96b4607baea1
 
