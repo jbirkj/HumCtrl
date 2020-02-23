@@ -3,9 +3,24 @@
 ## source for Raspberry Pi to measuer humidity and control a fan accordingly.
 
 ### Hardware:
-- Raspberry Pi 3 B+
-- BME280 sensor board 
-- SSR relay (Fotex SSR DA25 )
+* Raspberry Pi 3 B+
+* BME280 sensor board 
+* SSR relay (Fotex SSR DA25 )
+
+
+### Code example
+```
+    t,p,rH = bme280.readBME280All()
+    print("Reading @ {3}: {0:3.2f}gC, {1:4.0f}hPa, {2:2.1f}rH   ".format(t, p, rH, ctime())) 
+    r = requests.post(UBI_url, {'Temperature': t, 'Pressure': p, 'Humidity':rH} )
+
+    if rH > rHlimit:
+        f.FanOn()
+        print("Fan on")
+    else:
+        f.FanOff()
+        print("Fan Off")
+```
 
 ## References:
 
