@@ -53,7 +53,7 @@ try:
 except KeyboardInterrupt:
     print("KB interrupt!")
     
-except BaseException as e:
+except Exception as e:
     print("Other exception occurred")
     print(e.message)
     
