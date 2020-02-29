@@ -7,6 +7,15 @@
 * BME280 sensor board 
 * SSR relay (Fotex SSR DA25 )
 
+### Using REST
+execution have two optional arguments.
+argument "--t" setting the cycle time in seconds for how often to read
+argument "--rH" setting limit of relative humidity for when to start the airflow fan
+
+Example here measure room humidity and temperature every 10 minutes (600seconds) and start fan if relative humidity level is 45 or higher.
+``` funciton call example
+    python app.py --t=600 --rH=45
+```
 
 ### Code example
 ```
