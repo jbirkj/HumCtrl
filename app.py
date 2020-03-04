@@ -9,7 +9,6 @@ from os import system
 from ubi import UBI_url
 
 T = time()
-f = Fan()
 
 parser = argparse.ArgumentParser(description='add measure cycle in seconds')
 parser.add_argument("--t", default=10, type=int, help="set the time in seconds - default 10")
@@ -17,7 +16,7 @@ args=parser.parse_args()
 
 Tcycle = args.t
 
-sensor = '2302'
+sensor = Adafruit_DHT.AM2302
 pin = 4
 
 
