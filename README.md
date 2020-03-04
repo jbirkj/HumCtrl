@@ -1,11 +1,11 @@
 # HumCtrl
 
-## source for Raspberry Pi to measure humidity and control a fan accordingly.
+## source for Raspberry Pi to measure humidity and temperate and log within ubidots
 
 ### Hardware:
 * Raspberry Pi 3 B+
-* BME280 sensor board 
-* SSR relay (Fotex SSR DA25 )
+* AM2302 sensor directly to RPi pinheader
+
 
 ### Using REST
 execution have two optional arguments\
@@ -16,6 +16,11 @@ Example here measure room humidity and temperature every 10 minutes (600seconds)
 ``` funciton call example
     python app.py --t=600 --rH=45
 ```
+
+### Sensor setup
+used basic python lib to communicate with sensor.
+https://github.com/adafruit/Adafruit_Python_DHT
+
 
 ### Code example
 ```
