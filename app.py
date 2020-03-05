@@ -24,9 +24,15 @@ pin = 4
 try:
     #entry state to do measure at start
     humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
-    print("Reading @ {2}: {0:3.2f}gC, {1:2.1f}rH   ".format(temperature, humidity, ctime())) 
-    r = requests.post(UBI_url, {'Temperature': temperature, 'Humidity': humidity} )
-
+    if humidity is not None and temperature is not None:
+        try:
+            r = requests.post(UBI_url, {'Temperature': temperature, 'Humidity': humidity} )
+        except:
+            print("some error during requrests.post")
+        print("Reading @ {2}: {0:3.2f}gC, {1:2.1f}rH   ".format(temperature, humidity, ctime())) 
+    else:
+        print("Reading @ {}: Failed to get reading. Skip this and continue ...".format(ctime()))
+    
     #entering endless loop for continous runtime
     while(True):
         if (time()-T) >= Tcycle:     #T in seconds
@@ -34,8 +40,15 @@ try:
             T = time()
             humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
             system('clear')
-            print("Reading @ {2}: {0:3.2f}gC, {1:2.1f}rH   ".format(temperature, humidity, ctime())) 
-            r = requests.post(UBI_url, {'Temperature': temperature, 'Humidity': humidity} )
+
+            if humidity is not None and temperature is not None:
+                print("Reading @ {2}: {0:3.2f}gC, {1:2.1f}rH   ".format(temperature, humidity, ctime())) 
+                try:
+                    r = requests.post(UBI_url, {'Temperature': temperature, 'Humidity': humidity} )
+                except:
+                    print("some error during requests.post")
+            else:
+                print("Reading @ {}: Failed to get reading. Skip this and continue ...".format(ctime()))
             
 except KeyboardInterrupt:
     print("KB interrupt!")
