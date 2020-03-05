@@ -1,12 +1,21 @@
 # HumCtrl
 
-## source for Raspberry Pi to measuer humidity and control a fan accordingly.
+## source for Raspberry Pi to measure humidity and control a fan accordingly.
 
 ### Hardware:
 * Raspberry Pi 3 B+
 * BME280 sensor board 
 * SSR relay (Fotex SSR DA25 )
 
+### Using REST
+execution have two optional arguments\
+Argument "--t" setting the cycle time in seconds for how often to read\
+Argument "--rH" setting limit of relative humidity for when to start the airflow fan\
+\
+Example here measure room humidity and temperature every 10 minutes (600seconds) and start fan if relative humidity level is 45 or higher.
+``` funciton call example
+    python app.py --t=600 --rH=45
+```
 
 ### Code example
 ```
