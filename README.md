@@ -50,7 +50,7 @@ UBIDots example - https://help.ubidots.com/en/articles/1077054-diy-raspberry-pi-
 
 Linux environment variables
 '''
-nano ~/.bashrc     #open bashrc file in nano for edit and add env variables
-> export VARNAME=value
-source ~/.bashrc   #for change to take effect
+nano ~/.bashrc  
+> export VARNAME=value  
+source ~/.bashrc  
 '''
