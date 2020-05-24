@@ -48,3 +48,9 @@ README.md formatting - https://github.com/adam-p/markdown-here/wiki/Markdown-Che
 
 UBIDots example - https://help.ubidots.com/en/articles/1077054-diy-raspberry-pi-temperature-system-with-ubidots
 
+Linux environment variables
+'''
+nano ~/.bashrc     #open bashrc file in nano for edit and add env variables
+> export VARNAME=value
+source ~/.bashrc   #for change to take effect
+'''
