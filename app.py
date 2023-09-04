@@ -6,7 +6,7 @@ import requests
 from time import time, ctime
 from fan import Fan
 from os import system
-from ubi import UBI_url
+from ubi import UBI_url, TS_url
 
 T = time()
 f = Fan()
