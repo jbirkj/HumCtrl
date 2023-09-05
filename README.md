@@ -54,3 +54,7 @@ nano ~/.bashrc
 > export VARNAME=value  
 source ~/.bashrc  
 '''
+
+Using PAT for credentials with git push
+example https://mgimond.github.io/Colby-summer-git-workshop-2021/authenticating-with-github.html
+
