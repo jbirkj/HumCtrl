@@ -31,7 +31,7 @@ Example here measure room humidity and temperature every 10 minutes (600seconds)
         print("Fan Off")
 ```
 
-## References:
+## References :
 
 Cmd-line args - https://levelup.gitconnected.com/the-easy-guide-to-python-command-line-arguments-96b4607baea1
 
