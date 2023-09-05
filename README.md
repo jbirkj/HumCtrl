@@ -1,4 +1,4 @@
-# HumCtrl
+# HumCtrl for Thingspeak
 
 ## source for Raspberry Pi to measure humidity and control a fan accordingly.
 
