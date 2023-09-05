@@ -57,4 +57,6 @@ source ~/.bashrc
 
 Using PAT for credentials with git push
 example https://mgimond.github.io/Colby-summer-git-workshop-2021/authenticating-with-github.html
+When PAT is generated, it should be used as password when git push executes. 
+
 
